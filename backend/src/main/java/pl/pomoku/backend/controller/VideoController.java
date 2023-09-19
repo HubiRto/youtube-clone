@@ -16,4 +16,11 @@ public class VideoController {
     public void uploadVideo(@RequestParam("file") MultipartFile file){
         videoService.uploadVideo(file);
     }
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.OK)
+    public VideoDto editVideoMetadata(@RequestBody VideoDto videoDto){
+        return videoService.editVideo(videoDto);
+    }
+
 }
